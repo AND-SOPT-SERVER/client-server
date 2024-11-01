@@ -70,7 +70,7 @@ class Service(
         }
     }
 
-    fun patchHobby(token: String, password: String, hobby: String) {
+    fun patchHobby(token: String, password: String?, hobby: String?) {
         try {
             userRegister.putUser(token, password, hobby)
         } catch (e: Exception) {

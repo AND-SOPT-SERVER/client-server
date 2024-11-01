@@ -33,8 +33,8 @@ class UserEntity(
     fun getHobby() = hobby
     fun getToken() = token
 
-    fun update(password: String, hobby: String) {
-        this.password = password
-        this.hobby = hobby
+    fun update(password: String?, hobby: String?) {
+        this.password = password ?: this.password
+        this.hobby = hobby ?: this.hobby
     }
 }

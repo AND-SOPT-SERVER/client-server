@@ -97,13 +97,8 @@ data class LoginRequest(
 )
 
 data class PutUserRequest(
-    @field:NotBlank
-    @field:Size(max = 8)
-    val password: String,
-
-    @field:NotBlank
-    @field:Size(max = 8)
-    val hobby: String,
+    val password: String?,
+    val hobby: String?,
 )
 
 data class UserCreateResponse(

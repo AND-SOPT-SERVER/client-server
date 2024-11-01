@@ -71,7 +71,7 @@ class UserRegister(
     }
 
     @Transactional
-    fun putUser(token: String, password: String, hobby: String) {
+    fun putUser(token: String, password: String?, hobby: String?) {
         val userEntity = userRepository.findByToken(token)
             ?: throw InvalidTokenException()
 
