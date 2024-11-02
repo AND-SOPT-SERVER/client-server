@@ -60,7 +60,11 @@ class Api(
         @RequestHeader("token") token: String,
         @Valid @RequestBody request: PutUserRequest,
     ): ResponseEntity<Response<Unit>> {
-        service.patchHobby(token, request.password, request.hobby)
+        service.patchHobby(
+            token,
+            password = if(request.password.isNullOrBlank()) null else request.password,
+            hobby = if(request.hobby.isNullOrBlank()) null else request.hobby
+        )
 
         return ResponseEntity.ok().build()
     }
